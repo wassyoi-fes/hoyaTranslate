@@ -196,19 +196,49 @@ a:hover { color: var(--accent-deep); }
   font-weight: 500;
 }
 
-.wp-hero__mascots {
+.mascot-row {
   display: flex;
   justify-content: center;
   gap: 14px;
   margin: 24px 0 8px;
 }
 
-.wp-hero__mascots img {
-  width: 48px; height: 48px;
+.wp-hero__mascots img { width: 48px; height: 48px; }
+
+.wp-section .mascot-row { margin: 0 0 18px; }
+.wp-section .mascot-row img { width: 36px; height: 36px; }
+
+.wp-doc .mascot-row { margin: 0 0 14px; gap: 10px; }
+.wp-doc .mascot-row img { width: 30px; height: 30px; }
+
+.mascot {
+  --spin-duration: 22s;
+  --spin-delay: 0s;
+  display: inline-block;
+  animation: mascot-spin var(--spin-duration) linear infinite;
+  animation-delay: var(--spin-delay);
+  cursor: pointer;
+  transform-origin: center;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: animation-duration 0.3s;
 }
 
-.wp-hero__mascots img:nth-child(2) { transform: rotate(-6deg); }
-.wp-hero__mascots img:nth-child(3) { transform: rotate(8deg); }
+.mascot:hover { filter: brightness(1.05); }
+
+.mascot.is-burst { animation-duration: 0.5s; }
+
+.mascot-row .mascot:nth-child(1) { --spin-delay: 0s; }
+.mascot-row .mascot:nth-child(2) { --spin-delay: -7s; --spin-duration: 24s; }
+.mascot-row .mascot:nth-child(3) { --spin-delay: -14s; --spin-duration: 26s; }
+
+@keyframes mascot-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mascot { animation: none; }
+}
 
 /* ========== Section frame ========== */
 .wp-section {
@@ -371,14 +401,14 @@ a:hover { color: var(--accent-deep); }
 }
 
 .wp-footer__links {
-  display: flex; flex-wrap: wrap; gap: 6px 4px;
+  display: flex; flex-wrap: wrap; gap: 6px;
   align-items: center;
 }
 
 .wp-footer__links a {
   color: var(--m-cream);
   text-decoration: none;
-  padding: 6px 12px;
+  padding: 7px 12px;
   border-radius: 999px;
   transition: background 0.15s, color 0.15s;
   font-size: 13px;
@@ -391,11 +421,33 @@ a:hover { color: var(--accent-deep); }
   color: #fff;
 }
 
+.wp-footer__icon {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(251, 245, 233, 0.18);
+}
+
+.wp-footer__icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.wp-footer__icon:hover {
+  background: rgba(251, 245, 233, 0.12);
+  border-color: rgba(251, 245, 233, 0.5);
+}
+
 .wp-footer__sep {
   width: 1px;
-  height: 14px;
+  height: 18px;
   background: rgba(251, 245, 233, 0.22);
-  margin: 0 6px;
+  margin: 0 4px;
   display: inline-block;
 }
 
