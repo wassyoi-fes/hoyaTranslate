@@ -46,6 +46,22 @@ function startBurst(el, startAngle) {
   );
 }
 
+const hamburger = document.getElementById('wp-hamburger');
+const nav = document.getElementById('primary-nav');
+if (hamburger && nav) {
+  hamburger.addEventListener('click', () => {
+    const open = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', open ? 'false' : 'true');
+    nav.classList.toggle('is-open', !open);
+  });
+  document.addEventListener('click', (e) => {
+    if (!nav.classList.contains('is-open')) return;
+    if (hamburger.contains(e.target) || nav.contains(e.target)) return;
+    hamburger.setAttribute('aria-expanded', 'false');
+    nav.classList.remove('is-open');
+  });
+}
+
 if (!reducedMotion) {
   document.querySelectorAll('.mascot-row:not(.mascot-row--still)').forEach((row) => {
     const items = Array.from(row.querySelectorAll('.mascot'));

@@ -7,7 +7,9 @@
   <link rel="icon" type="image/png" href="mascot.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@fontsource/line-seed-jp@5.2.2/index.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,7 +21,10 @@
       <span class="wp-brand__name">ほやほやほんやく</span>
       <img class="wp-brand__icon" src="mascot.png" alt="">
     </a>
-    <nav class="wp-nav" aria-label="Primary">
+    <button class="wp-hamburger" id="wp-hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="wp-nav" id="primary-nav" aria-label="Primary">
       <a href="privacy.html">プライバシーポリシー</a>
     </nav>
   </div>
