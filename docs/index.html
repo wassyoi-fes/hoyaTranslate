@@ -6,10 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="ほやドル公認の Chrome 拡張機能。ブラウザの日本語テキストを「ほや語」に変換します。">
   <link rel="icon" type="image/png" href="mascot.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@fontsource/line-seed-jp@5.2.2/index.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -29,21 +26,48 @@
   <div class="m-hachimaki" aria-hidden="true"></div>
 </header>
 
-<main class="container">
-  <header class="hero">
-    <p class="hero__eyebrow">— ほやドル 公認 —</p>
-    <p class="hero__lead">Chrome 拡張機能</p>
-  </header>
+<main>
 
-  <section>
-    <h2>これは何?</h2>
-    <p>あらゆる Web ページの日本語テキストを、ほやドルが日頃使っている「ほや語」に置き換える Chrome 拡張機能です。挨拶や定型表現、関連する漢字熟語をまとめて変換し、いつものブラウジングをほやっほーな雰囲気に変えます。</p>
+  <section class="wp-hero">
+    <div class="wp-hero__inner">
+      <div class="wp-eyebrow">Chrome Extension</div>
+      <h1 class="wp-hero__title">
+        Web を、<br>
+        <span class="ulay accent">ほや語</span>に。
+      </h1>
+      <p class="wp-hero__lede">ほやドル公認の Chrome 拡張機能。<br>ブラウザに映る日本語を、まるごと「ほや語」に変換します。</p>
+      <div class="wp-hero__mascots" aria-hidden="true">
+        <img src="mascot.png" alt="">
+        <img src="mascot.png" alt="">
+        <img src="mascot.png" alt="">
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2>インストール</h2>
-    <p>Chrome ウェブストア審査中です。公開され次第こちらにリンクを掲載します。</p>
+  <section class="wp-section wp-section--alt">
+    <div class="wp-section__inner">
+      <div class="wp-section__head">
+        <div class="wp-eyebrow">About</div>
+        <h2 class="wp-section__title">これは<span class="accent">何?</span></h2>
+      </div>
+      <div class="wp-section__body">
+        <p>あらゆる Web ページの日本語テキストを、ほやドルが日頃使っている「ほや語」に置き換える Chrome 拡張機能です。挨拶や定型表現、関連する漢字熟語をまとめて変換し、いつものブラウジングをほやっほーな雰囲気に変えます。</p>
+      </div>
+    </div>
   </section>
+
+  <section class="wp-section wp-section--ink">
+    <div class="wp-section__inner">
+      <div class="wp-section__head">
+        <div class="wp-eyebrow" style="color: rgba(251, 245, 233, 0.55);">Install</div>
+        <h2 class="wp-section__title">インストール</h2>
+      </div>
+      <div class="wp-section__body">
+        <p style="color: rgba(251, 245, 233, 0.85);">Chrome ウェブストア審査中です。公開され次第こちらにリンクを掲載します。</p>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="wp-footer">
@@ -52,13 +76,13 @@
       <img class="mark" src="assets/wassyoi-logo.png" alt="WASSYOI">
     </span>
 
-    <div class="wp-footer__row wp-footer__row--label">SITE</div>
+    <div class="wp-footer__row--label">Site</div>
     <div class="wp-footer__links">
       <a href="about.html">この拡張機能について</a>
       <a href="https://github.com/wassyoi-fes/hoyaTranslate" target="_blank" rel="noopener">GitHub</a>
     </div>
 
-    <div class="wp-footer__row wp-footer__row--label">ほやドル SNS</div>
+    <div class="wp-footer__row--label">ほやドル SNS</div>
     <div class="wp-footer__links">
       <a href="https://x.com/Moe_hoya?lang=ja" target="_blank" rel="noopener" aria-label="ほやドル X">X</a>
       <a href="https://www.instagram.com/moe_hoya/" target="_blank" rel="noopener" aria-label="ほやドル Instagram">Instagram</a>
