@@ -1,10 +1,15 @@
 :root {
   /* hoya palette */
-  --bg: #FF7A3D;
+  --hoya: #FF7A3D;        /* primary brand color (popup background) */
+  --hoya-deep: #C04510;   /* darker tint for legible small text */
+  --hoya-darker: #8B2F08;
   --bg-soft: #fff4ee;
-  --accent: #C04510;
-  --accent-deep: #8B2F08;
   --rule: #efd9c9;
+
+  /* legacy aliases */
+  --bg: var(--hoya);
+  --accent: var(--hoya-deep);
+  --accent-deep: var(--hoya-darker);
 
   /* WASSYOI tokens */
   --m-ink: #1A1614;
@@ -73,15 +78,16 @@ a:hover { color: var(--accent-deep); }
 .wp-brand {
   display: inline-flex; align-items: center; gap: 10px;
   text-decoration: none;
-  color: var(--accent);
+  color: var(--hoya);
   font-weight: 800;
   letter-spacing: 0.02em;
   font-size: 22px;
   line-height: 1;
   transition: opacity 0.15s;
+  -webkit-text-stroke: 0.4px currentColor;
 }
 
-.wp-brand:hover { opacity: 0.82; color: var(--accent); }
+.wp-brand:hover { opacity: 0.82; color: var(--hoya); }
 
 .wp-brand__icon {
   width: 32px; height: 32px;
@@ -160,9 +166,10 @@ a:hover { color: var(--accent-deep); }
   color: var(--m-ink);
   text-wrap: balance;
   margin: 0 0 22px;
+  -webkit-text-stroke: 0.9px currentColor;
 }
 
-.wp-hero__title .accent { color: var(--accent); }
+.wp-hero__title .accent { color: var(--hoya); }
 
 .wp-hero__title .ulay {
   position: relative;
@@ -233,12 +240,13 @@ a:hover { color: var(--accent-deep); }
   margin: 0;
   text-wrap: balance;
   color: var(--m-ink);
+  -webkit-text-stroke: 0.55px currentColor;
 }
 
 .wp-section--ink .wp-section__title { color: var(--m-cream); }
 
-.wp-section__title .accent { color: var(--accent); }
-.wp-section--ink .wp-section__title .accent { color: var(--bg); }
+.wp-section__title .accent { color: var(--hoya); }
+.wp-section--ink .wp-section__title .accent { color: var(--hoya); }
 
 .wp-section__lede {
   margin: 14px auto 0;
@@ -280,6 +288,7 @@ a:hover { color: var(--accent-deep); }
   line-height: 1.15;
   color: var(--m-ink);
   margin: 0 0 10px;
+  -webkit-text-stroke: 0.6px currentColor;
 }
 
 .wp-page-head .meta {
@@ -348,45 +357,30 @@ a:hover { color: var(--accent-deep); }
 .wp-footer {
   background: var(--m-ink);
   color: var(--m-cream);
-  padding: 48px 0 32px;
+  padding: 32px 0;
   flex-shrink: 0;
 }
 
 .wp-footer__inner {
-  display: flex; flex-direction: column; align-items: center; gap: 20px;
-  text-align: center;
+  display: flex; flex-direction: row; align-items: center; justify-content: space-between;
+  gap: 16px 28px;
+  flex-wrap: wrap;
   max-width: var(--wrap-max);
   margin: 0 auto;
   padding: 0 var(--wrap-pad);
 }
 
-.wp-footer__brand { display: inline-flex; align-items: center; justify-content: center; }
-
-.wp-footer__brand .mark {
-  height: 44px; width: auto; display: block;
-  filter: brightness(0) invert(1);
-  opacity: 0.92;
+.wp-footer__links {
+  display: flex; flex-wrap: wrap; gap: 6px 4px;
+  align-items: center;
 }
-
-.wp-footer__row--label {
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: rgba(251, 245, 233, 0.5);
-  width: 100%;
-  margin: 6px 0 -10px;
-}
-
-.wp-footer__links { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 
 .wp-footer__links a {
   color: var(--m-cream);
   text-decoration: none;
-  padding: 7px 14px;
-  border: 1px solid rgba(251, 245, 233, 0.22);
+  padding: 6px 12px;
   border-radius: 999px;
-  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  transition: background 0.15s, color 0.15s;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -394,16 +388,23 @@ a:hover { color: var(--accent-deep); }
 
 .wp-footer__links a:hover {
   background: rgba(251, 245, 233, 0.1);
-  border-color: rgba(251, 245, 233, 0.55);
   color: #fff;
+}
+
+.wp-footer__sep {
+  width: 1px;
+  height: 14px;
+  background: rgba(251, 245, 233, 0.22);
+  margin: 0 6px;
+  display: inline-block;
 }
 
 .wp-footer__copy {
   font-size: 11.5px;
   font-weight: 400;
   letter-spacing: 0.08em;
-  opacity: 0.7;
-  margin-top: 6px;
+  opacity: 0.6;
+  white-space: nowrap;
 }
 
 /* ========== Responsive ========== */
