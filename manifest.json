@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "ほやほやほんやく",
   "version": "0.1.0",
-  "description": "ブラウザ上の日本語テキストを「ほや語」に変換するほやドル公認(?)拡張機能",
+  "description": "ブラウザ上のテキストを「ほや語」に変換するほやドル公認拡張機能",
   "permissions": ["activeTab", "storage", "scripting"],
   "host_permissions": ["<all_urls>"],
   "action": {
