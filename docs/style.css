@@ -33,6 +33,18 @@ html, body {
   font-weight: 900;
   letter-spacing: 0.03em;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.title-icon {
+  width: 44px;
+  height: 44px;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
 }
 
 .lead {
