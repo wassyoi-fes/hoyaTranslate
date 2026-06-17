@@ -7,41 +7,79 @@
   <link rel="icon" type="image/png" href="mascot.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="container">
-    <header class="hero">
-      <h1>
-        <img class="title-icon" src="mascot.png" alt="">
-        <span>ほやほやほんやく</span>
-        <img class="title-icon" src="mascot.png" alt="">
-      </h1>
-      <p class="lead">ほやドル公認の Chrome 拡張機能</p>
-    </header>
 
-    <section>
-      <h2>これは何?</h2>
-      <p>あらゆる Web ページの日本語テキストを、ほやドルが日頃使っている「ほや語」に置き換える Chrome 拡張機能です。挨拶や定型表現、関連する漢字熟語をまとめて変換し、いつものブラウジングをほやっほーな雰囲気に変えます。</p>
-    </section>
+<header class="wp-header">
+  <div class="wp-header__inner">
+    <a href="./" class="wp-logo" aria-label="WASSYOI ホーム">
+      <img class="wp-logo__img" src="assets/wassyoi-logo.png" alt="WASSYOI">
+    </a>
+    <nav class="wp-nav" aria-label="Primary">
+      <a href="privacy.html">プライバシー</a>
+      <a href="https://github.com/wassyoi-fes/hoyaTranslate" target="_blank" rel="noopener" class="is-cta">GitHub</a>
+    </nav>
+  </div>
+  <div class="m-hachimaki" aria-hidden="true"></div>
+</header>
 
-    <section>
-      <h2>インストール</h2>
-      <p>Chrome ウェブストア審査中です。公開され次第こちらにリンクを掲載します。</p>
-    </section>
+<main class="container">
+  <header class="hero">
+    <h1>
+      <img class="title-icon" src="mascot.png" alt="">
+      <span>ほやほやほんやく</span>
+      <img class="title-icon" src="mascot.png" alt="">
+    </h1>
+    <p class="lead">ほやドル公認の Chrome 拡張機能</p>
+  </header>
 
-    <section>
-      <h2>リンク</h2>
-      <ul>
-        <li><a href="privacy.html">プライバシーポリシー</a></li>
-        <li><a href="https://github.com/wassyoi-fes/hoyaTranslate">GitHub リポジトリ</a></li>
-      </ul>
-    </section>
+  <section>
+    <h2>これは何?</h2>
+    <p>あらゆる Web ページの日本語テキストを、ほやドルが日頃使っている「ほや語」に置き換える Chrome 拡張機能です。挨拶や定型表現、関連する漢字熟語をまとめて変換し、いつものブラウジングをほやっほーな雰囲気に変えます。</p>
+  </section>
 
-    <footer>
-      <p>&copy; 2026 WASSYOI. All rights reserved.</p>
-    </footer>
-  </main>
+  <section>
+    <h2>インストール</h2>
+    <p>Chrome ウェブストア審査中です。公開され次第こちらにリンクを掲載します。</p>
+  </section>
+
+  <section>
+    <h2>リンク</h2>
+    <ul>
+      <li><a href="privacy.html">プライバシーポリシー</a></li>
+      <li><a href="https://github.com/wassyoi-fes/hoyaTranslate">GitHub リポジトリ</a></li>
+    </ul>
+  </section>
+
+  <section class="about-section">
+    <h2>この拡張機能について</h2>
+    <p class="about-meta">
+      この拡張機能は私たち
+      <a href="https://wassyoi-fes.github.io/" target="_blank" rel="noopener" aria-label="WASSYOI">
+        <img class="inline-wassyoi-logo" src="assets/wassyoi-logo.png" alt="WASSYOI">
+      </a>
+      が作成しました。
+    </p>
+    <p>WASSYOI は、地域の&quot;お祭り&quot;の運営をデジタルで支えるチームです。</p>
+    <p>あらゆる特有の課題に対して、&quot;お祭り&quot;特化のシステムを提供します。</p>
+    <p>くわしくは <a href="https://wassyoi-fes.github.io/about/" target="_blank" rel="noopener">こちら</a></p>
+  </section>
+</main>
+
+<footer class="wp-footer">
+  <div class="wp-footer__inner">
+    <span class="wp-footer__brand">
+      <img class="mark" src="assets/wassyoi-logo.png" alt="WASSYOI">
+    </span>
+    <nav class="wp-footer__social" aria-label="ほやドル SNS">
+      <a href="https://x.com/Moe_hoya?lang=ja" target="_blank" rel="noopener" aria-label="ほやドル X">X</a>
+      <a href="https://www.instagram.com/moe_hoya/" target="_blank" rel="noopener" aria-label="ほやドル Instagram">Instagram</a>
+    </nav>
+    <span class="wp-footer__copy">&copy; 2026 WASSYOI. All rights reserved.</span>
+  </div>
+</footer>
+
 </body>
 </html>
