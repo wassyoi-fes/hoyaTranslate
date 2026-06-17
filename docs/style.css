@@ -232,6 +232,12 @@ a:hover { color: var(--accent-deep); }
 .mascot-row .mascot:nth-child(2) { --spin-delay: -7s; --spin-duration: 24s; }
 .mascot-row .mascot:nth-child(3) { --spin-delay: -14s; --spin-duration: 26s; }
 
+.mascot-row--still .mascot,
+.mascot-row--still .mascot.is-burst {
+  animation: none;
+  cursor: default;
+}
+
 @keyframes mascot-spin {
   to { transform: rotate(360deg); }
 }
@@ -422,8 +428,8 @@ a:hover { color: var(--accent-deep); }
 }
 
 .wp-footer__icon {
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   padding: 0;
   display: inline-flex;
   align-items: center;
@@ -433,8 +439,8 @@ a:hover { color: var(--accent-deep); }
 }
 
 .wp-footer__icon svg {
-  width: 18px;
-  height: 18px;
+  width: 28px;
+  height: 28px;
   display: block;
 }
 
