@@ -2,24 +2,27 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>ほやほやほんやく プライバシーポリシー</title>
+  <title>プライバシーポリシー | ほやほやほんやく</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="mascot.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@fontsource/line-seed-jp@5.2.2/index.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="wp-header">
   <div class="wp-header__inner">
-    <a href="./" class="wp-logo" aria-label="WASSYOI ホーム">
-      <img class="wp-logo__img" src="assets/wassyoi-logo.png" alt="WASSYOI">
+    <a href="./" class="wp-brand" aria-label="ほやほやほんやく ホーム">
+      <img class="wp-brand__icon" src="mascot.png" alt="">
+      <span class="wp-brand__name">ほやほやほんやく</span>
+      <img class="wp-brand__icon" src="mascot.png" alt="">
     </a>
     <nav class="wp-nav" aria-label="Primary">
-      <a href="./">ホーム</a>
-      <a href="https://github.com/wassyoi-fes/hoyaTranslate" target="_blank" rel="noopener" class="is-cta">GitHub</a>
+      <a href="privacy.html" class="is-current">プライバシーポリシー</a>
     </nav>
   </div>
   <div class="m-hachimaki" aria-hidden="true"></div>
@@ -97,10 +100,19 @@
     <span class="wp-footer__brand">
       <img class="mark" src="assets/wassyoi-logo.png" alt="WASSYOI">
     </span>
-    <nav class="wp-footer__social" aria-label="ほやドル SNS">
+
+    <div class="wp-footer__row wp-footer__row--label">SITE</div>
+    <div class="wp-footer__links">
+      <a href="about.html">この拡張機能について</a>
+      <a href="https://github.com/wassyoi-fes/hoyaTranslate" target="_blank" rel="noopener">GitHub</a>
+    </div>
+
+    <div class="wp-footer__row wp-footer__row--label">ほやドル SNS</div>
+    <div class="wp-footer__links">
       <a href="https://x.com/Moe_hoya?lang=ja" target="_blank" rel="noopener" aria-label="ほやドル X">X</a>
       <a href="https://www.instagram.com/moe_hoya/" target="_blank" rel="noopener" aria-label="ほやドル Instagram">Instagram</a>
-    </nav>
+    </div>
+
     <span class="wp-footer__copy">&copy; 2026 WASSYOI. All rights reserved.</span>
   </div>
 </footer>
