@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ほやほやほんやく プライバシーポリシー</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <a href="./" class="home-link">&larr; ほやほやほんやく</a>
+      <h1>プライバシーポリシー</h1>
+      <p class="meta">最終更新日: 2026年6月17日</p>
+    </header>
+
+    <section>
+      <h2>概要</h2>
+      <p>「ほやほやほんやく」(以下「本拡張機能」)は、ブラウザに表示されている日本語テキストを「ほや語」に変換する Chrome 拡張機能です。本ポリシーは、本拡張機能の利用にともなうデータの取扱いについて定めるものです。</p>
+    </section>
+
+    <section>
+      <h2>収集・送信する情報</h2>
+      <p>本拡張機能は、利用者の個人情報・閲覧履歴・ページ内容・その他あらゆる情報を、外部サーバーや第三者に<strong>送信・収集しません</strong>。テキストの解析および置換はすべて利用者のブラウザ内で完結します。</p>
+    </section>
+
+    <section>
+      <h2>ローカルに保存される情報</h2>
+      <p>以下の利用者設定を、Chrome の <code>storage.local</code> API を用いて利用者のブラウザ内にのみ保存します。</p>
+      <ul>
+        <li>ほんやくの ON / OFF 状態</li>
+        <li>選択中のモード(ほやモード / スーパーほやモード / ウルトラほやモード / ウルトラほや逆ほんやくモード)</li>
+        <li>解放済みモードの記録</li>
+      </ul>
+      <p>これらの情報は外部に送信されません。本拡張機能をブラウザからアンインストールした時点で、上記情報は削除されます。</p>
+    </section>
+
+    <section>
+      <h2>権限の利用理由</h2>
+      <p>本拡張機能は以下の Chrome 権限を使用します。</p>
+      <dl>
+        <dt><code>activeTab</code> / <code>scripting</code> / <code>host_permissions: &lt;all_urls&gt;</code></dt>
+        <dd>利用者が閲覧中の Web ページ上のテキストを「ほや語」に変換するために必要です。ページ内容を読み取り、表示テキストを変換結果に置き換える目的のみに使用されます。</dd>
+        <dt><code>storage</code></dt>
+        <dd>上記「ローカルに保存される情報」を利用者のブラウザ内に保存するために必要です。</dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>ページ内容の取扱い</h2>
+      <p>本拡張機能はページ上のテキストを読み取り、ブラウザ内のメモリ上でのみ「ほや語」への変換処理を行い、その結果に置き換えます。読み取った内容が外部に送信されることはありません。</p>
+    </section>
+
+    <section>
+      <h2>第三者への提供</h2>
+      <p>本拡張機能は、利用者から取得したいかなる情報も第三者に提供することはありません。</p>
+    </section>
+
+    <section>
+      <h2>本ポリシーの変更</h2>
+      <p>本ポリシーの内容は、必要に応じて変更されることがあります。重要な変更があった場合は本ページにて告知します。</p>
+    </section>
+
+    <section>
+      <h2>お問い合わせ</h2>
+      <p>本拡張機能および本ポリシーに関するお問い合わせは下記までお願いいたします。</p>
+      <ul>
+        <li>運営: WASSYOI</li>
+        <li>メール: <a href="mailto:wassyoi.fes@gmail.com">wassyoi.fes@gmail.com</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>&copy; WASSYOI</p>
+    </footer>
+  </main>
+</body>
+</html>

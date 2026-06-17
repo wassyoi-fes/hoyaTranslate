@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ほやほやほんやく</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">ほやほやほんやく</h1>
+
+    <button type="button" id="toggle" class="toggle" aria-pressed="true" aria-label="ほんやくON/OFF">
+      <img id="toggleImg" class="toggle-img" src="icons/mode1.png" alt="">
+    </button>
+
+    <div class="mode-switch">
+      <button type="button" id="prev" class="arrow" aria-label="前のモード">&#9664;</button>
+      <div class="mode-name" id="modeName"><div class="mode-name-inner" id="modeNameInner">ほや</div></div>
+      <button type="button" id="next" class="arrow" aria-label="次のモード">&#9654;</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
