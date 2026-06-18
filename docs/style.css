@@ -476,11 +476,32 @@ a:hover { color: var(--hoya-darker); }
   font-weight: 700;
   letter-spacing: 0.04em;
   opacity: 0.85;
+  position: relative;
+  display: inline-block;
 }
 
-.wp-footer__links a:hover {
+.wp-footer__links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wp-footer__links a:hover,
+.wp-footer__links a:focus-visible {
   color: #fff;
   opacity: 1;
+}
+
+.wp-footer__links a:hover::after,
+.wp-footer__links a:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .wp-footer__icon {
