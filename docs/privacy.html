@@ -21,6 +21,7 @@
       <span class="wp-brand__name">ほやほやほんやく</span>
       <img class="wp-brand__icon" src="mascot.png" alt="">
     </a>
+    <span class="wp-nav__cta is-disabled" aria-disabled="true">現在申請中</span>
     <button class="wp-hamburger" id="wp-hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="primary-nav">
       <span></span><span></span><span></span>
     </button>
@@ -36,14 +37,14 @@
     <div class="wp-page-head__inner">
       <div class="wp-eyebrow">Privacy Policy</div>
       <h1>プライバシーポリシー</h1>
-      <p class="meta">最終更新日: 2026 / 06 / 17</p>
+      <p class="meta">最終更新日: 2026 / 06 / 18</p>
     </div>
   </header>
 
   <div class="wp-doc">
     <section>
       <h2>概要</h2>
-      <p>「ほやほやほんやく」(以下「本拡張機能」)は、ブラウザに表示されている日本語テキストを「ほや語」に変換する Chrome 拡張機能です。本ポリシーは、本拡張機能の利用にともなうデータの取扱いについて定めるものです。</p>
+      <p>「ほやほやほんやく」(以下「本拡張機能」)は、ブラウザに表示されているテキストを「ほや語」に変換する Chrome 拡張機能です。本ポリシーは、本拡張機能の利用にともなうデータの取扱いについて定めるものです。</p>
     </section>
 
     <section>
@@ -66,8 +67,8 @@
       <h2>権限の利用理由</h2>
       <p>本拡張機能は以下の Chrome 権限を使用します。</p>
       <dl>
-        <dt><code>activeTab</code> / <code>scripting</code> / <code>host_permissions: &lt;all_urls&gt;</code></dt>
-        <dd>利用者が閲覧中の Web ページ上のテキストを「ほや語」に変換するために必要です。ページ内容を読み取り、表示テキストを変換結果に置き換える目的のみに使用されます。</dd>
+        <dt><code>host_permissions: &lt;all_urls&gt;</code></dt>
+        <dd>利用者が閲覧中の Web ページ上のテキストを「ほや語」に変換するために必要です。本拡張機能はユーザーが訪問するあらゆる Web ページを対象とするため、特定のドメインに限定することができません。ページ内容の読み取りおよび表示テキストの置き換えという目的のみに使用され、読み取った内容が外部に送信されることはありません。</dd>
         <dt><code>storage</code></dt>
         <dd>上記「ローカルに保存される情報」を利用者のブラウザ内に保存するために必要です。</dd>
       </dl>
@@ -106,6 +107,7 @@
 <footer class="wp-footer">
   <div class="wp-footer__inner">
     <div class="wp-footer__links">
+      <a href="privacy.html">プライバシーポリシー</a>
       <a href="about.html">この拡張機能について</a>
       <a class="wp-footer__icon" href="https://github.com/wassyoi-fes/hoyaTranslate" target="_blank" rel="noopener" aria-label="GitHub リポジトリ">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.2.9 2.3v3.4c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
