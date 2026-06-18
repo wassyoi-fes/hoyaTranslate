@@ -418,8 +418,24 @@ a:hover { color: var(--hoya-darker); }
 }
 
 .wp-footer__links {
-  display: flex; flex-wrap: wrap; gap: 6px;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.wp-footer__col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.wp-footer__icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .wp-footer__links a {
@@ -462,14 +478,6 @@ a:hover { color: var(--hoya-darker); }
   border-color: rgba(251, 245, 233, 0.5);
 }
 
-.wp-footer__sep {
-  width: 1px;
-  height: 22px;
-  background: rgba(251, 245, 233, 0.22);
-  margin: 0 4px;
-  display: inline-block;
-}
-
 .wp-footer__copy {
   font-size: 11.5px;
   font-weight: 400;
@@ -491,6 +499,12 @@ a:hover { color: var(--hoya-darker); }
   .wp-footer { padding: 28px 0; }
   .wp-footer__icon { width: 44px; height: 44px; }
   .wp-footer__icon svg { width: 28px; height: 28px; }
+  .wp-footer__links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -546,17 +560,16 @@ a:hover { color: var(--hoya-darker); }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-family: var(--font-display);
+  padding: 8px 14px;
+  border-radius: 6px;
   font-size: 13.5px;
   font-weight: 700;
   letter-spacing: 0.06em;
   background: var(--hoya);
-  color: var(--m-cream);
+  color: #fff;
   text-decoration: none;
   border: 0;
-  transition: background 0.12s, color 0.12s, opacity 0.12s;
+  transition: background 0.12s, color 0.12s;
   white-space: nowrap;
 }
 
@@ -564,12 +577,10 @@ a:hover { color: var(--hoya-darker); }
 
 .wp-nav__cta.is-disabled,
 .wp-nav__cta[aria-disabled="true"] {
-  background: rgba(26, 22, 20, 0.08);
-  color: rgba(26, 22, 20, 0.45);
+  background: rgba(26, 22, 20, 0.35);
+  color: rgba(255, 255, 255, 0.88);
   cursor: not-allowed;
   pointer-events: none;
-  border: 1px dashed rgba(26, 22, 20, 0.18);
-  padding: 7px 15px;
 }
 
 .wp-cta-row {
@@ -612,13 +623,11 @@ a:hover { color: var(--hoya-darker); }
 
 @media (max-width: 600px) {
   .wp-nav__cta {
-    padding: 7px 12px;
-    font-size: 12.5px;
-    letter-spacing: 0.04em;
-  }
-  .wp-nav__cta.is-disabled,
-  .wp-nav__cta[aria-disabled="true"] {
-    padding: 6px 11px;
+    padding: 12px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+    justify-content: flex-start;
+    width: 100%;
   }
   .wp-cta {
     padding: 14px 28px;
