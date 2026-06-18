@@ -183,8 +183,6 @@ const KANA_FEATURES = (() => {
   return features;
 })();
 
-const KATAKANA_RANGE = /[ァ-ヺ]/;
-
 function applyExtraSuperHoyaRules(text) {
   let result = '';
   let i = 0;
@@ -197,7 +195,7 @@ function applyExtraSuperHoyaRules(text) {
       const aHit = af[0] === 'h' || af[1] === 'o';
       const bHit = bf[0] === 'y' || bf[1] === 'a';
       if (aHit && bHit) {
-        const useKata = KATAKANA_RANGE.test(a) && KATAKANA_RANGE.test(b);
+        const useKata = KATAKANA_RE.test(a) && KATAKANA_RE.test(b);
         result += useKata ? 'ホヤ' : 'ほや';
         i += 2;
         continue;
@@ -477,21 +475,6 @@ async function init() {
   applyToDocument();
   startObserving();
 }
-
-chrome.runtime.onMessage.addListener((msg) => {
-  if (!msg) return;
-  if (msg.type === 'HOYA_MODE_CHANGED' && msg.mode) {
-    if (msg.mode !== currentMode) {
-      currentMode = msg.mode;
-      applyToDocument();
-    }
-  } else if (msg.type === 'HOYA_ENABLED_CHANGED' && typeof msg.enabled === 'boolean') {
-    if (msg.enabled !== currentEnabled) {
-      currentEnabled = msg.enabled;
-      applyToDocument();
-    }
-  }
-});
 
 chrome.storage.onChanged.addListener((changes, area) => {
   if (area !== 'local') return;

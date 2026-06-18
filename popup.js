@@ -94,27 +94,14 @@ function setUIForEnabled(enabled) {
   syncToggleImg();
 }
 
-async function notifyActiveTab(message) {
-  try {
-    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    if (tab?.id) {
-      chrome.tabs.sendMessage(tab.id, message, () => {
-        void chrome.runtime.lastError;
-      });
-    }
-  } catch (_) {}
-}
-
 async function applyMode(mode, direction) {
   await chrome.storage.local.set({ mode });
   setUIForMode(mode, direction);
-  notifyActiveTab({ type: 'HOYA_MODE_CHANGED', mode });
 }
 
 async function applyEnabled(enabled) {
   await chrome.storage.local.set({ enabled });
   setUIForEnabled(enabled);
-  notifyActiveTab({ type: 'HOYA_ENABLED_CHANGED', enabled });
 }
 
 function goPrev() {
