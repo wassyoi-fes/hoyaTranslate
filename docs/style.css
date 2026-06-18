@@ -480,7 +480,7 @@ a:hover { color: var(--hoya-darker); }
   display: inline-block;
 }
 
-.wp-footer__links a::after {
+.wp-footer__col a::after {
   content: '';
   position: absolute;
   left: 0;
@@ -499,8 +499,8 @@ a:hover { color: var(--hoya-darker); }
   opacity: 1;
 }
 
-.wp-footer__links a:hover::after,
-.wp-footer__links a:focus-visible::after {
+.wp-footer__col a:hover::after,
+.wp-footer__col a:focus-visible::after {
   transform: scaleX(1);
 }
 
