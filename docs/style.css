@@ -448,7 +448,7 @@ a:hover { color: var(--hoya-darker); }
 .wp-footer__links {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   gap: 32px;
   flex-wrap: wrap;
 }
