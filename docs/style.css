@@ -556,7 +556,9 @@ a:hover { color: var(--hoya-darker); }
 }
 
 /* ========== Install CTA ========== */
-.wp-nav__cta {
+.wp-nav__cta,
+a.wp-nav__cta:link,
+a.wp-nav__cta:visited {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
@@ -574,7 +576,9 @@ a:hover { color: var(--hoya-darker); }
   white-space: nowrap;
 }
 
-.wp-nav__cta:hover { background: var(--hoya-deep); color: #fff; }
+a.wp-nav__cta:hover,
+a.wp-nav__cta:focus,
+a.wp-nav__cta:active { background: var(--hoya-deep); color: #fff; }
 
 .wp-nav__cta.is-disabled,
 .wp-nav__cta[aria-disabled="true"] {
@@ -590,7 +594,9 @@ a:hover { color: var(--hoya-darker); }
   margin: 28px auto 8px;
 }
 
-.wp-cta {
+.wp-cta,
+a.wp-cta:link,
+a.wp-cta:visited {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -609,7 +615,9 @@ a:hover { color: var(--hoya-darker); }
   box-shadow: 0 6px 16px rgba(192, 69, 16, 0.28);
 }
 
-.wp-cta:hover { background: var(--hoya-deep); transform: translateY(-1px); }
+a.wp-cta:hover,
+a.wp-cta:focus,
+a.wp-cta:active { background: var(--hoya-deep); color: #fff; transform: translateY(-1px); }
 
 .wp-cta.is-disabled,
 .wp-cta[aria-disabled="true"] {
