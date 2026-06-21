@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>404 Not Found | ほやほやほんやく</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" type="image/png" href="/hoyaTranslate/mascot.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@fontsource/line-seed-jp@5.2.2/index.css" rel="stylesheet">
+  <link rel="stylesheet" href="/hoyaTranslate/style.css">
+</head>
+<body>
+
+<header class="wp-header">
+  <div class="wp-header__inner">
+    <a href="/hoyaTranslate/" class="wp-brand" aria-label="ほやほやほんやく ホーム">
+      <img class="wp-brand__icon" src="/hoyaTranslate/mascot.png" alt="">
+      <span class="wp-brand__name">ほやほやほんやく</span>
+      <img class="wp-brand__icon" src="/hoyaTranslate/mascot.png" alt="">
+    </a>
+    <button class="wp-hamburger" id="wp-hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="wp-nav" id="primary-nav" aria-label="Primary">
+      <a class="wp-nav__cta" href="https://chromewebstore.google.com/detail/%E3%81%BB%E3%82%84%E3%81%BB%E3%82%84%E3%81%BB%E3%82%93%E3%82%84%E3%81%8F/akkhffhmkdgnagkpmkimkjihjaefmahb" target="_blank" rel="noopener">Chrome ウェブストアで入手</a>
+      <a href="/hoyaTranslate/privacy.html">プライバシーポリシー</a>
+    </nav>
+  </div>
+  <div class="m-hachimaki" aria-hidden="true"></div>
+</header>
+
+<main>
+  <section style="padding: 48px 0 24px;">
+    <div style="max-width: 960px; margin: 0 auto; padding: 0 var(--wrap-pad); text-align: center;">
+      <p style="margin: 0; font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 12px; letter-spacing: 0.22em; color: var(--hoya-deep);">404 NOT FOUND</p>
+      <h1 style="font-size: 36px; margin-top: 8px; line-height: 1.2; font-family: var(--font-display);">ページが見つかりませんでした</h1>
+      <p style="margin-top: 8px; color: var(--m-ink-2); font-size: 14px;">お探しのページは移動・削除された可能性があります。ひとまず遊んでいってください。</p>
+    </div>
+  </section>
+
+  <section style="padding-bottom: 48px;">
+    <div data-dino class="dino-wrap" style="max-width: 960px; margin: 0 auto; padding: 0 var(--wrap-pad);">
+      <div class="dino-score-row">
+        <span>
+          <span class="dino-score-label">HI</span>
+          <span data-dino-hi class="dino-score-value">00000</span>
+        </span>
+        <span>
+          <span class="dino-score-label">SCORE</span>
+          <span data-dino-score class="dino-score-value is-score">00000</span>
+        </span>
+      </div>
+
+      <div data-dino-stage class="dino-stage">
+        <canvas data-dino-canvas class="dino-canvas" width="960" height="360"></canvas>
+
+        <div data-dino-overlay-start class="dino-overlay is-show">
+          <div class="dino-panel">
+            <div class="dino-panel-title">READY?</div>
+            <div class="dino-panel-hint">SPACE / TAP で開始 ・ ↓ でしゃがむ</div>
+          </div>
+        </div>
+
+        <div data-dino-overlay-over class="dino-overlay">
+          <div class="dino-panel">
+            <div class="dino-panel-title is-over">GAME OVER</div>
+            <div class="dino-panel-stats">
+              SCORE <span data-dino-final-score>00000</span>
+              <br>
+              HI <span data-dino-final-hi>00000</span>
+            </div>
+            <div class="dino-panel-hint">SPACE / TAP で再挑戦</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dino-controls">
+        <span class="dino-controls-desktop">
+          <kbd>SPACE</kbd>
+          <kbd>↑</kbd>
+          ジャンプ
+        </span>
+        <span class="dino-controls-desktop">
+          <kbd>↓</kbd>
+          しゃがむ
+        </span>
+        <span class="dino-controls-mobile">
+          <kbd>上の方タップ</kbd>
+          ジャンプ
+        </span>
+        <span class="dino-controls-mobile">
+          <kbd>下の方タップ</kbd>
+          しゃがむ
+        </span>
+        <span data-dino-speed class="dino-speed">SPD ×1.0</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 16px 0 64px; text-align: center;">
+    <a href="/hoyaTranslate/" class="wp-cta">トップに戻る</a>
+  </section>
+</main>
+
+<footer class="wp-footer">
+  <div class="wp-footer__inner">
+    <div class="wp-footer__links">
+      <div class="wp-footer__icons">
+        <a class="wp-footer__icon" href="https://github.com/wassyoi-fes/hoyaTranslate" target="_blank" rel="noopener" aria-label="GitHub リポジトリ">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.2.9 2.3v3.4c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        </a>
+        <a class="wp-footer__icon" href="https://www.instagram.com/moe_hoya/" target="_blank" rel="noopener" aria-label="ほやドル 萌江 Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="wp-footer__icon" href="https://x.com/Moe_hoya?lang=ja" target="_blank" rel="noopener" aria-label="ほやドル 萌江 X">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+      <div class="wp-footer__col">
+        <a href="/hoyaTranslate/privacy.html">プライバシーポリシー</a>
+        <a href="/hoyaTranslate/about.html">この拡張機能について</a>
+        <a href="https://www.big-advance.site/c/144/2338/service" target="_blank" rel="noopener">ほやドルについて</a>
+      </div>
+    </div>
+    <span class="wp-footer__copy">&copy; 2026 WASSYOI. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="/hoyaTranslate/site.js" defer></script>
+<script type="module" src="/hoyaTranslate/dino-init.js"></script>
+</body>
+</html>
