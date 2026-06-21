@@ -2,6 +2,7 @@
 
 ブラウザ上の日本語テキストを「ほや語」に変換する Chrome 拡張機能。
 
+- Chrome ウェブストア: https://chromewebstore.google.com/detail/%E3%81%BB%E3%82%84%E3%81%BB%E3%82%84%E3%81%BB%E3%82%93%E3%82%84%E3%81%8F/akkhffhmkdgnagkpmkimkjihjaefmahb
 - ランディング: https://wassyoi-fes.github.io/hoyaTranslate/
 - プライバシーポリシー: https://wassyoi-fes.github.io/hoyaTranslate/privacy.html
 

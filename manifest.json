@@ -3,6 +3,7 @@
   "name": "ほやほやほんやく",
   "version": "0.1.0",
   "description": "ブラウザ上のテキストを「ほや語」に変換するほやドル公認拡張機能",
+  "homepage_url": "https://wassyoi-fes.github.io/hoyaTranslate/",
   "permissions": ["storage"],
   "host_permissions": ["<all_urls>"],
   "action": {
