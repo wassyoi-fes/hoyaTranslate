@@ -62,6 +62,26 @@ if (hamburger && nav) {
   });
 }
 
+const installCta = document.querySelector('[data-install-cta]');
+const flipMascots = Array.from(document.querySelectorAll('.mascot-row--flip .mascot-flip'));
+if (installCta && flipMascots.length) {
+  let active = null;
+  const flipOne = () => {
+    if (active) active.classList.remove('is-flipped');
+    active = flipMascots[Math.floor(Math.random() * flipMascots.length)];
+    active.classList.add('is-flipped');
+  };
+  const unflip = () => {
+    if (!active) return;
+    active.classList.remove('is-flipped');
+    active = null;
+  };
+  installCta.addEventListener('pointerenter', flipOne);
+  installCta.addEventListener('focus', flipOne);
+  installCta.addEventListener('pointerleave', unflip);
+  installCta.addEventListener('blur', unflip);
+}
+
 if (!reducedMotion) {
   document.querySelectorAll('.mascot-row:not(.mascot-row--still)').forEach((row) => {
     const items = Array.from(row.querySelectorAll('.mascot'));

@@ -343,6 +343,34 @@ a:hover { color: var(--hoya-darker); }
 
 .mascot-row--still .mascot { cursor: default; }
 
+/* Flip card: hover the install CTA to flip a random mascot below it. */
+.mascot-flip {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  perspective: 600px;
+}
+
+.mascot-flip .mascot {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mascot-flip .mascot-front { transform: rotateY(0deg); }
+.mascot-flip .mascot-back { transform: rotateY(180deg); }
+.mascot-flip.is-flipped .mascot-front { transform: rotateY(-180deg); }
+.mascot-flip.is-flipped .mascot-back { transform: rotateY(0deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  .mascot-flip .mascot { transition: none; }
+}
+
 /* ========== Document pages (privacy, about) ========== */
 .wp-page-head {
   padding: 56px var(--wrap-pad) 28px;
