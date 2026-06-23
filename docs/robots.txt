@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /hoyaTranslate/404.html
+Disallow: /hoyaTranslate/dino.html
+
+Sitemap: https://wassyoi-fes.github.io/hoyaTranslate/sitemap.xml
