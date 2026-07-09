@@ -53,6 +53,7 @@
       <span></span><span></span><span></span>
     </button>
     <nav class="wp-nav" id="primary-nav" aria-label="Primary">
+      <a href="#try">ためす</a>
       <a class="wp-nav__cta" href="https://chromewebstore.google.com/detail/%E3%81%BB%E3%82%84%E3%81%BB%E3%82%84%E3%81%BB%E3%82%93%E3%82%84%E3%81%8F/akkhffhmkdgnagkpmkimkjihjaefmahb" target="_blank" rel="noopener">Chromeに追加</a>
       <a href="privacy.html">プライバシーポリシー</a>
     </nav>
@@ -72,6 +73,52 @@
         <img class="mascot" src="mascot.png" alt="">
         <img class="mascot" src="mascot.png" alt="">
         <img class="mascot" src="mascot.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="wp-section wp-section--try" id="try">
+    <div class="wp-section__inner">
+      <div class="wp-section__head">
+        <h2 class="wp-section__title">ブラウザで<span class="accent">ためす</span></h2>
+        <p class="wp-section__lede">文章を入力すると、その場で「ほや語」にほんやくされます。</p>
+      </div>
+
+      <div class="hoya-try">
+        <div class="hoya-try__bar">
+          <button type="button" class="hoya-try__arrow" id="tryPrev" aria-label="前のモード">&#9664;</button>
+          <div class="hoya-try__mode" id="tryModeName" data-mode="hoya">
+            <div class="hoya-try__mode-inner" id="tryModeNameInner">ほや<br>モード</div>
+          </div>
+          <button type="button" class="hoya-try__arrow" id="tryNext" aria-label="次のモード">&#9654;</button>
+        </div>
+
+        <div class="hoya-try__chips" role="group" aria-label="れい文">
+          <button type="button" class="hoya-try__chip" data-sample="おはようございます">おはようございます</button>
+          <button type="button" class="hoya-try__chip" data-sample="なるほど、ありがとうございます">なるほど、ありがとうございます</button>
+          <button type="button" class="hoya-try__chip" data-sample="早起きして冬の海で泳ぎました">早起きして冬の海で泳ぎました</button>
+          <button type="button" class="hoya-try__chip" data-sample="幸せな気持ちでうまいご飯を食べました">幸せな気持ちでうまいご飯を食べました</button>
+        </div>
+
+        <div class="hoya-try__panes">
+          <div class="hoya-try__pane hoya-try__pane--in">
+            <label class="hoya-try__label" for="tryInput">にほんご</label>
+            <textarea id="tryInput" class="hoya-try__textarea" placeholder="ここに文章を入力してください" maxlength="500" rows="5"></textarea>
+          </div>
+
+          <div class="hoya-try__flow" aria-hidden="true">
+            <svg class="hoya-try__flow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+          </div>
+
+          <div class="hoya-try__pane hoya-try__pane--out">
+            <div class="hoya-try__hachimaki" aria-hidden="true"></div>
+            <div class="hoya-try__pane-head">
+              <span class="hoya-try__label" id="tryOutputLabel">ほや語</span>
+              <button type="button" class="hoya-try__copy" id="tryCopy" aria-label="ほんやく結果をコピー">コピー</button>
+            </div>
+            <div class="hoya-try__output" id="tryOutput" role="status" aria-live="polite" aria-labelledby="tryOutputLabel"></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -146,6 +193,7 @@
   </div>
 </footer>
 
+<script src="translate.js" defer></script>
 <script src="site.js" defer></script>
 </body>
 </html>
