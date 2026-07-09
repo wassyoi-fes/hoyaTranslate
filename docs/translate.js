@@ -441,6 +441,20 @@ function playLockedShake() {
   navigator.vibrate?.(50);
 }
 
+// 隠しモード解禁時の紙吹雪 (canvas-confetti、CDN 読み込み失敗時は何もしない)
+function playUnlockConfetti() {
+  if (typeof confetti !== 'function') return;
+  const colors = ['#FF7A3D', '#C04510', '#E8B84A', '#B31D00', '#FBF5E9'];
+  const r = tryModeName.getBoundingClientRect();
+  const origin = {
+    x: (r.left + r.width / 2) / window.innerWidth,
+    y: (r.top + r.height / 2) / window.innerHeight,
+  };
+  confetti({ particleCount: 80, spread: 70, startVelocity: 32, scalar: 1.2, origin, colors, disableForReducedMotion: true });
+  confetti({ particleCount: 40, angle: 60, spread: 55, startVelocity: 42, scalar: 1.2, origin, colors, disableForReducedMotion: true });
+  confetti({ particleCount: 40, angle: 120, spread: 55, startVelocity: 42, scalar: 1.2, origin, colors, disableForReducedMotion: true });
+}
+
 // 逆ほんやくモードでは 3枚目のペイン (にほんご→ほや語→逆ほんやく) を生やす
 function updateRevPane(mode) {
   if (!tryPanes || !tryFlowRev || !tryRevPane) return;
@@ -514,6 +528,8 @@ function tryAdvance() {
   unlockedIndex = Math.max(unlockedIndex, target);
   localStorage.setItem(STORAGE_UNLOCKED_KEY, String(unlockedIndex));
   applyTryMode(MODE_ORDER[target], 'next');
+  // 連打が必要な隠しモードを解禁したときだけ祝う (hoya→super の通常送りでは出さない)
+  if (required > 1) playUnlockConfetti();
 }
 
 function setOutputText(el, text) {
