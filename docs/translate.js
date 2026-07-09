@@ -414,6 +414,11 @@ const tryInput = document.getElementById('tryInput');
 const tryOutput = document.getElementById('tryOutput');
 const tryCopyBtn = document.getElementById('tryCopy');
 const tryChips = document.querySelectorAll('.hoya-try__chip');
+const tryPanes = document.querySelector('.hoya-try__panes');
+const tryFlowRev = document.getElementById('tryFlowRev');
+const tryRevPane = document.getElementById('tryRevPane');
+const tryRevOutput = document.getElementById('tryRevOutput');
+const tryCopyRevBtn = document.getElementById('tryCopyRev');
 
 function readStoredIndex(key, fallback) {
   const v = parseInt(localStorage.getItem(key), 10);
@@ -425,6 +430,32 @@ function playTrySlide(direction) {
   tryModeNameInner.classList.remove('hoya-try-slide-right', 'hoya-try-slide-left');
   void tryModeNameInner.offsetWidth;
   tryModeNameInner.classList.add(cls);
+}
+
+// 未解禁モードへ進めなかったときの「何かある」示唆演出(解禁カウントには影響しない)
+function playLockedShake() {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  tryModeName.classList.remove('hoya-try-shake');
+  void tryModeName.offsetWidth;
+  tryModeName.classList.add('hoya-try-shake');
+  navigator.vibrate?.(50);
+}
+
+// 逆ほんやくモードでは 3枚目のペイン (にほんご→ほや語→逆ほんやく) を生やす
+function updateRevPane(mode) {
+  if (!tryPanes || !tryFlowRev || !tryRevPane) return;
+  const show = mode === 'ultra_hoya_reverse';
+  const wasHidden = tryRevPane.hidden;
+  tryPanes.classList.toggle('is-chain', show);
+  tryFlowRev.hidden = !show;
+  tryRevPane.hidden = !show;
+  if (show && wasHidden) {
+    for (const el of [tryFlowRev, tryRevPane]) {
+      el.classList.remove('hoya-try-grow');
+      void el.offsetWidth;
+      el.classList.add('hoya-try-grow');
+    }
+  }
 }
 
 function setTryUIForMode(mode, direction) {
@@ -442,6 +473,7 @@ function setTryUIForMode(mode, direction) {
   tryNextBtn.classList.toggle('edge', atEnd);
   tryPrevBtn.disabled = atStart;
   tryNextBtn.disabled = atEnd;
+  updateRevPane(mode);
   if (direction) playTrySlide(direction);
   renderOutput();
 }
@@ -473,7 +505,10 @@ function tryAdvance() {
   const now = performance.now();
   nextTapStreak = now - lastNextTapAt <= TAP_WINDOW_MS ? nextTapStreak + 1 : 1;
   lastNextTapAt = now;
-  if (nextTapStreak < required) return;
+  if (nextTapStreak < required) {
+    playLockedShake();
+    return;
+  }
   lastNextTapAt = 0;
   nextTapStreak = 0;
   unlockedIndex = Math.max(unlockedIndex, target);
@@ -481,14 +516,21 @@ function tryAdvance() {
   applyTryMode(MODE_ORDER[target], 'next');
 }
 
+function setOutputText(el, text) {
+  el.classList.remove('is-updated');
+  void el.offsetWidth;
+  el.textContent = text;
+  el.classList.add('is-updated');
+}
+
 function renderOutput() {
   const mode = tryModeName.dataset.mode || DEFAULT_MODE;
   const text = tryInput.value;
-  const converted = text ? convertText(text, mode) : '';
-  tryOutput.classList.remove('is-updated');
-  void tryOutput.offsetWidth;
-  tryOutput.textContent = converted;
-  tryOutput.classList.add('is-updated');
+  const isChain = mode === 'ultra_hoya_reverse' && tryRevOutput;
+  setOutputText(tryOutput, text ? convertText(text, isChain ? 'ultra_hoya' : mode) : '');
+  if (isChain) {
+    setOutputText(tryRevOutput, text ? convertText(text, 'ultra_hoya_reverse') : '');
+  }
 }
 
 let renderTimer = null;
@@ -502,6 +544,17 @@ if (tryPrevBtn && tryNextBtn && tryModeName && tryInput && tryOutput) {
   tryNextBtn.addEventListener('click', tryAdvance);
   tryInput.addEventListener('input', scheduleRender);
 
+  tryModeName.addEventListener('animationend', (e) => {
+    if (e.animationName === 'hoyaTryShake') tryModeName.classList.remove('hoya-try-shake');
+  });
+
+  // grow の fill が transform (モバイルの矢印回転) を上書きし続けないよう終了時に外す
+  for (const el of [tryFlowRev, tryRevPane]) {
+    el?.addEventListener('animationend', (e) => {
+      if (e.animationName === 'hoyaTryGrow') el.classList.remove('hoya-try-grow');
+    });
+  }
+
   tryChips.forEach((chip) => {
     chip.addEventListener('click', () => {
       tryInput.value = chip.dataset.sample || '';
@@ -510,23 +563,26 @@ if (tryPrevBtn && tryNextBtn && tryModeName && tryInput && tryOutput) {
     });
   });
 
-  if (tryCopyBtn) {
-    tryCopyBtn.addEventListener('click', async () => {
-      const text = tryOutput.textContent || '';
+  const bindCopy = (btn, sourceEl) => {
+    if (!btn || !sourceEl) return;
+    btn.addEventListener('click', async () => {
+      const text = sourceEl.textContent || '';
       if (!text) return;
       try {
         await navigator.clipboard.writeText(text);
-        tryCopyBtn.classList.add('is-copied');
-        tryCopyBtn.textContent = 'コピーしました';
+        btn.classList.add('is-copied');
+        btn.textContent = 'コピーしました';
         setTimeout(() => {
-          tryCopyBtn.classList.remove('is-copied');
-          tryCopyBtn.textContent = 'コピー';
+          btn.classList.remove('is-copied');
+          btn.textContent = 'コピー';
         }, 1400);
       } catch (_) {
         /* クリップボード権限がない環境では何もしない */
       }
     });
-  }
+  };
+  bindCopy(tryCopyBtn, tryOutput);
+  bindCopy(tryCopyRevBtn, tryRevOutput);
 
   const storedMode = localStorage.getItem(STORAGE_MODE_KEY);
   const safeMode = MODE_ORDER.includes(storedMode) ? storedMode : DEFAULT_MODE;
