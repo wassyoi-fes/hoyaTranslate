@@ -888,7 +888,7 @@ a.wp-cta:active {
   max-width: 340px;
   margin: 0 auto 20px;
   padding: 8px;
-  background: var(--hoya-deep);
+  background: var(--hoya);
   border: 1.5px solid var(--m-ink);
   border-radius: 999px;
   box-shadow: 3px 3px 0 var(--m-ink);
